@@ -54,16 +54,15 @@
 
 /* use style sheet */
 
-@import url(../css/font-awesome.css);
-@import url(../css/flaticon.css);
-@import url(../css/animate.css);
-@import url(../css/owl.css);
-@import url(../css/bootstrap.css);
-@import url(../css/bootstrap.min.css);
-@import url(../css/revolution-slider.css);
-@import url(../css/jquery-ui.css);
-@import url(../css/jquery.fancybox.css);
-@import url(../css/hover.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css);
+@import url(https://cdn.jsdelivr.net/gh/ReputableImage/landifloor/css/flaticon.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css);
+@import url(https://cdn.jsdelivr.net/gh/ReputableImage/landifloor/css/owl.css);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css);
+/*@import url(https://cdn.jsdelivr.net/gh/ReputableImage/landifloor/css/revolution-slider.css);*/
+@import url(https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css);
+@import url(https://cdn.jsdelivr.net/gh/ReputableImage/landifloor/css/jquery.fancybox.css);
+/*@import url(https://cdn.jsdelivr.net/gh/ReputableImage/landifloor/css/hover.css);*/
 
 
 /*** 
@@ -77,7 +76,7 @@
   margin:0px;
   padding:0px;
   border:none;
-  outline:none;
+  outline: none;
 }
 
 
@@ -366,6 +365,31 @@ h4 a:hover{
   z-index:0;
   transition:all 500ms ease;
 }
+.fixed-header .sticky-header{
+    z-index:999;
+    opacity:1;
+    visibility:visible;
+    -ms-animation-name: fadeInDown;
+    -moz-animation-name: fadeInDown;
+    -op-animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -ms-animation-duration: 500ms;
+    -moz-animation-duration: 500ms;
+    -op-animation-duration: 500ms;
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
+    -ms-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -op-animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -ms-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    -op-animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
 
 .logo-box{
   position: relative;
@@ -608,6 +632,11 @@ h4 a:hover{
   float: right;
   transform: translatex(40px);
 }
+@media (min-width: 360px) and (max-width: 720px) {
+  .call-to-action .right-content{
+    transform:none;
+  }
+}
 .call-to-action .left-content{
   position: relative;
   z-index: 1;
@@ -845,14 +874,6 @@ h4 a:hover{
 .testimonials-section .testimonials-content h3{
   line-height: 36px;
   margin-bottom: 31px;
-}
-.testimonials-section .owl-nav{
-  display: none !important;
-}
-.testimonials-section .owl-dots {
-  position: absolute;
-  right: -20%;
-  top: 0px;
 }
 
 /** choose-us **/
@@ -1708,9 +1729,7 @@ textarea:focus{
 .brand-section li.img-box:hover img{
   opacity: 1;
 }
-.brand-section .owl-controls{
-    display: none;
-  }
+
 
 /*** 
 
@@ -2233,7 +2252,6 @@ textarea:focus{
 /*my styles*/
 /*main hero video section*/
 .legal-marketing-section {
-  /* position: relative; */
   text-align: center;
   margin-top: 0; /* Reset margin for full-page layout */
   overflow: hidden;
@@ -2260,6 +2278,7 @@ textarea:focus{
   height: 1080px; 
   z-index: -1;
   pointer-events: none; 
+  overflow-x: hidden;
 }
 
 /*.video-overlay {*/
@@ -2273,6 +2292,8 @@ textarea:focus{
 /*  z-index: 0; /* Behind text and buttons */
 /*}*/
 
+
+
 .legal-header {
   font-size: 3.6em; 
   margin: 0.3em 0;
@@ -2281,11 +2302,17 @@ textarea:focus{
   padding: 0;
 }
 .dynamic-text {
-  font-size: 1.7em; 
+  font-size: 1.8em; /* Adjust as needed */
+  line-height: 1.5em; /* Set line spacing */
+  height: calc(1.5em * 2); /* Two lines of text */
   margin-bottom: 20px;
   color: white;
   font-weight: normal;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent overflow if more than two lines of text */
 }
 
 .legal-contact-button {
@@ -2340,4 +2367,221 @@ textarea:focus{
 /*map footer*/
 .map-in-footer {
   padding: 0 !important;
+}
+.owl-theme .owl-dots .owl-dot {
+    display:none;
+}
+.brand-section .owl-controls {
+    display:none;
+}
+.error {
+    color:darkred;
+  }
+/*my media queries*/
+
+/* Extra Small Devices (Portrait Phones) */
+@media (max-width: 400px) {
+  /* Styles for iPhone 7, 8, Moto E7, etc. */
+  .legal-marketing-section {
+    position: relative; 
+  }
+  .legal-header {
+    font-size: 2.7em;
+    line-height: 42px;
+    margin: 1.4em 0 0.7em 0;
+  }
+  .dynamic-text {
+    font-size: 1.3em;
+  }
+  .sticky-header {
+    overflow: hidden !important;
+    padding:0;
+  }
+  .top-info {
+    padding: 50px 0 0 0;
+  }
+  .call-to-action:before {
+    display:none;
+  }
+  .page-title, .page-title-2, .page-title-3, .page-title-4, .page-title-5 {
+    padding: 150px 0px 71px 0px;
+}
+.blog-classic .sidebar-details{
+  margin: 0;
+}
+.info-text .content-right{
+    margin-left: 0;
+  }
+}
+/* Small Devices (Larger Phones) */
+@media (min-width: 401px) and (max-width: 480px) {
+  /* Styles for iPhone 11 Pro Max, Xiaomi Redmi Note 10S, etc. */
+  .legal-marketing-section {
+    position: relative; 
+  }
+  .legal-header {
+    font-size: 2.9em;
+    line-height: 42px;
+    margin: 1.4em 0 0.7em 0;
+  }
+  .dynamic-text {
+    font-size: 1.3em;
+  }
+  .top-info {
+    padding: 50px 0 0 0;
+  }
+  .call-to-action:before {
+    display:none;
+  }
+  .page-title, .page-title-2, .page-title-3, .page-title-4, .page-title-5 {
+    padding: 150px 0px 71px 0px;
+}
+.blog-classic .sidebar-details{
+  margin: 0;
+}
+.info-text .content-right{
+    margin-left: 0;
+  }
+}
+/* Medium Devices (Small Tablets and Large Phones) */
+@media (min-width: 481px) and (max-width: 720px) {
+  /* Styles for Galaxy Z Fold 6 (closed), etc. */
+  .legal-marketing-section {
+    position: relative; 
+  }
+  .legal-header {
+    font-size: 2.9em;
+    line-height: 42px;
+    margin: 1.4em 0 0.7em 0;
+  }
+  .dynamic-text {
+    font-size: 1.3em;
+  }
+  .top-info {
+    padding: 50px 0 0 0;
+  }
+  .call-to-action:before {
+    display:none;
+  }
+  .blog-classic .sidebar-details{
+    margin: 0;
+  }
+  .info-text .content-right{
+    margin-left: 0;
+  }
+}
+/* Large Devices (Tablets) */
+@media (min-width: 721px) and (max-width: 1024px) {
+  /* Styles for iPad Air 2, compact tablets, etc. */
+  .legal-marketing-section {
+    position: relative; 
+  }
+  .pricing-section .sec-title h2 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+  }
+  .info-text .content-right{
+    margin-left: 0;
+  }
+}
+/* Extra Large Devices (Laptops, Small Desktops) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  /* Styles for older laptops, mid-range laptops, etc. */
+  .legal-marketing-section::before {
+    display:none;
+  }
+  .background-video {
+    width:100vw;
+    height:100vh;
+  }
+.project-section .single-item .lower-content {
+  padding: 36px 0px 24px 0px;
+}
+.project-tab .p-tab {
+  top: 16px;
+}
+.top-info {
+  padding: 20px 0px 78px 0px;
+}
+.info-text .content-right{
+    margin-left: 0;
+  }
+}
+/*media queries specific for certain devices*/
+@media (width: 384px) and (height: 824px) {
+  /* galaxy S24 Ultra */
+  .call-out .text span, .call-out .text span a {
+    font-size: 26px;
+  }
+}
+@media (width: 1366px) and (height: 768px) {
+  .top-info {
+    padding: 71px 0 78px 0;
+  }
+}
+@media (width: 1440px) and (height: 900px) {
+  .top-info {
+    padding: 180px 0 78px 0;
+  }
+}
+@media (width: 768px) and (height: 1024px) {
+  .top-info {
+    padding: 80px 0 78px 0;
+  }
+  .blog-classic .sidebar-details{
+    margin: 0;
+  }
+}
+@media (width: 810px) and (height: 1080px) {
+  .top-info {
+    padding: 80px 0 78px 0;
+  }
+}
+@media (width: 800px) and (height: 1280px) {
+  .top-info {
+    padding: 80px 0 78px 0;
+  }
+}
+@media (width: 360px) and (height: 800px) {
+  .call-out .text span, .call-out .text span a {
+    font-size: 25px;
+  }
+}
+@media (width: 390px) and (height: 844px) {
+  .call-out .text span, .call-out .text span a {
+    font-size: 25px;
+  }
+}
+@media (width: 375px) and (height: 667px) {
+  .call-out .text span, .call-out .text span a {
+    font-size: 25px;
+  }
+}
+@media (width: 375px) and (height: 812px) {
+  .call-out .text span, .call-out .text span a {
+    font-size: 25px;
+  }
+}
+@media (width: 360px) and (height: 640px) {
+  .call-out .text span, .call-out .text span a {
+    font-size: 25px;
+  }
+}
+@media (width: 1536px) and (height: 864px) {
+  .legal-marketing-section::before {
+    display:none;
+  }
+  .background-video {
+    width:100vw;
+    height:100vh;
+  }
+.project-section .single-item .lower-content {
+  padding: 36px 0px 24px 0px;
+}
+.project-tab .p-tab {
+  top: 16px;
+}
+.top-info {
+  padding: 180px 0px 78px 0px;
+}
 }
